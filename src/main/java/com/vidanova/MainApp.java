@@ -167,7 +167,7 @@ public class MainApp extends Application {
       String mensaje = """
                     ¡Hola %s! 🌟
 
-                    Acabamos de recibir tu compra del producto -- %s en nuestra tienda 🍃VidanovaStore
+                    Acabamos de recibir tu compra del producto -- %s -- en nuestra tienda 🍃VidanovaStore
 
                     El cual será entregado en:
 
