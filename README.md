@@ -10,7 +10,8 @@ validaciones de campos y empaquetado autónomo en **Fat JAR ejecutable** mediant
 **_Autor: Saul Echeverri Duque_**   
 _Edición: 2026_
 
-<img src="img/interfaz.gif" width="1000px" alt="Portada del Proyecto">
+<img src="img/interfaz.gif" width="809" alt="Portada del Proyecto">
+
 
 ## Comenzando 🚀
 El propósito de esta aplicación es resolver de manera eficiente la captura y estandarización de los mensajes de confirmación
@@ -111,7 +112,7 @@ El proyecto fue desarrollado siguiendo los siguientes requerimientos técnicos:
 * **Arquitectura de UI:** Formulario estructurado con componentes nativos `GridPane`, `VBox` y `HBox`. ✅
 * **Gestión de portapapeles:** Integración con `Clipboard` y `ClipboardContent` para copia inmediata. ✅
 * **Plantilla Markdown:** Interpolación mediante *Text Blocks* multilínea preservando emojis nativos. ✅
-* Validación de entradas: Verificación proactiva de campos en blanco (isBlank()) con diálogos de alerta contextuales (Alert.AlertType.WARNING). ✅
+* **Validación de entradas:** Verificación proactiva de campos en blanco (isBlank()) con diálogos de alerta contextuales (Alert.AlertType.WARNING). ✅
 * **Diseño visual (UI Branding):** Fondo verde pastel (`#80d39b`), bordes redondeados y tipografía moderna `Segoe UI`. ✅
 * **Distribución portátil:** Generación de *Fat JAR* ejecutable con un solo clic. ✅
 
@@ -159,19 +160,20 @@ graph TD
 ```
 ### Formato del Mensaje Markdown Generado
 ```markdown
-¡Hola! Soy Eugenia Jojoa. Acabo de hacer un pedido en 🍃*VidanovaStore* con los siguientes detalles:
+¡Hola Eugenia! 🌟
 
-🛍️ *Productos:* 1 x Crema Despigmentante Coreana Arbutin + TXA (50g)
-💰 *Total a pagar:* $89.900
-📞 *Teléfono:* 310 6714021
-🏠 *Dirección de envío:* Calle/Carrera 20 # 19-30, barrio Capri (Pasto, Nariño)
+Acabamos de recibir tu compra del producto -- Crema Despigmentante Arbutin 7.0% + TXA 4.0% Tosowoong® (50g) en nuestra tienda 🍃VidanovaStore
 
-Confirmo que todos mis datos son correctos y que pagaré en efectivo al recibir mi pedido.
-En caso de no estar presente, dejaré el dinero en mi casa para que alguien más pueda recibirlo.
+El cual será entregado en:
 
-También entiendo que una vez generada la guía de mi pedido, no será posible cancelarlo y me comprometo a recibirlo. 🚚
+*Dirección:* Colombia 20# 19 .30 - barrio Capri -
+*Ciudad:* PASTO
+*Departamento:* NARIÑO
+*Teléfono:* 310 6714021
+*Total a Pagar:* $89.900
 
-Gracias y espero su confirmación. 😊
+El *envío* es totalmente *Gratis* y el pago es *Contra Entrega* para tu seguridad 🛍️🤍
+🚚 Por favor *confírmanos* si tus datos son correctos para despachar tu pedido *ahora* 🤍
 ```
 
 ### Flujo del Proceso de la Aplicación
@@ -191,13 +193,15 @@ Gracias y espero su confirmación. 😊
 
 ## 5. CAMPOS DEL FORMULARIO 📝
 
-| Campo | Tipo | Ejemplo de Entrada | Descripción |
-| :--- | :--- | :--- | :--- |
-| **Nombre completo** | `TextField` | `Eugenia Jojoa` | Nombre del cliente que realiza el pedido |
-| **Producto(s)** | `TextField` | `1 x Crema Despigmentante Coreana (50g)` | Descripción y cantidades solicitadas |
-| **Total a pagar** | `TextField` | `$89.900` | Monto final que se cobrará al cliente |
-| **Teléfono** | `TextField` | `310 6714021` | Número de contacto directo para la guía |
-| **Dirección de envío** | `TextField` | `Calle 20 # 19-30, barrio Capri (Pasto)` | Ubicación exacta de entrega con ciudad |
+| Campo | Componente UI | Ejemplo de Entrada | Regla de Validación | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **Nombre** | `TextField` | `Eugenia` | Solo letras y espacios (admite tildes y ñ) | Nombre del cliente que realizó la compra |
+| **Producto(s)** | `TextField` | `Crema Despigmentante Arbutin 7.0% + TXA 4.0% Tosowoong® (50g)` | Texto libre (no vacío) | Nombre detallado del artículo o combo solicitado |
+| **Dirección** | `TextField` | `Colombia 20# 19 .30 - barrio Capri -` | Alfanumérico y símbolos usuales | Dirección de residencia o entrega del destinatario |
+| **Ciudad** | `TextField` | `PASTO` | Solo letras y espacios | Municipio o ciudad de destino (se auto-formatea en mayúsculas) |
+| **Departamento** | `TextField` | `NARIÑO` | Solo letras y espacios | Departamento de entrega (se auto-formatea en mayúsculas) |
+| **Teléfono** | `TextField` | `3106714021` | Solo dígitos numéricos (`^[0-9]+$`) | Número de contacto telefónico para la guía logística |
+| **Total a pagar** | `TextField` | `89900` o `$89.900` | Valor numérico positivo | Total a cobrar; se formatea automáticamente con separador de miles (`$89.900`) |
 
 ---
 
