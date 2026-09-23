@@ -189,7 +189,6 @@ Gracias y espero su confirmación. 😊
 
 ---
 
-### 5. FLUJO FUNCIONAMIENTO DE LA APLICACIÓN 📊
 ## 5. CAMPOS DEL FORMULARIO 📝
 
 | Campo | Tipo | Ejemplo de Entrada | Descripción |
