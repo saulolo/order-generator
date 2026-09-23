@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ClaudeCodeTabState">
+    <option name="tabSessions">
+      <map>
+        <entry key="0">
+          <value>
+            <TabSessionState>
+              <option name="provider" value="claude" />
+              <option name="sessionId" value="367b4cb9-c313-4ed5-acae-70a451bd4fb8" />
+              <option name="cwd" value="D:\SOFTWARE\PROGRAMACION\PROYECTOS\Proyectos\Proyectos_Java_Spring_Boot\VidaNovaStore\order-generator" />
+              <option name="model" value="claude-sonnet-5[1m]" />
+              <option name="permissionMode" value="plan" />
+            </TabSessionState>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
