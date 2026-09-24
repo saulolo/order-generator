@@ -1,69 +1,271 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   VidaNovaStore — Order Generator
+   Tema: Colores Invertidos (Fondo Verde Bosque con Botones Morado Pastel)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── RAIZ ──────────────────────────────────────────────────────────────── */
 .root {
-    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #1D3B2C;
+    -fx-font-family: "Segoe UI", -apple-system, "Helvetica Neue", sans-serif;
     -fx-font-size: 13px;
-    -fx-background-color: #BFE3C0;
 }
 
-.titulo-principal {
-    -fx-font-size: 18px;
+.root-pane {
+    -fx-background-color: #1D3B2C;
+}
+
+/* ─── HEADER ────────────────────────────────────────────────────────────── */
+.header-box {
+    -fx-background-color: #142B20;
+    -fx-padding: 16 32 16 32;
+    -fx-border-color: transparent transparent #7C719F transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0, 0, 2);
+}
+
+.brand-title {
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #0f172a;
-    -fx-padding: 0 0 8 0;
+    -fx-text-fill: #C4BCE0;
+    -fx-effect: dropshadow(gaussian, rgba(124, 113, 159, 0.45), 8, 0, 0, 0);
 }
 
-.text-field {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #cbd5e1;
-    -fx-border-radius: 6px;
-    -fx-background-radius: 6px;
-    -fx-padding: 8px;
-}
-
-.text-field:focused {
-    -fx-border-color: #10b981;
-}
-
-.text-area {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #cbd5e1;
-    -fx-border-radius: 6px;
-    -fx-background-radius: 6px;
-    -fx-font-family: 'Consolas', 'Courier New', monospace;
+.brand-subtitle {
     -fx-font-size: 12px;
+    -fx-text-fill: #B5DEC6;
+    -fx-font-style: italic;
 }
 
-.text-area .content {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 6px;
+/* ─── CONTENT HBOX ──────────────────────────────────────────────────────── */
+.content-hbox {
+    -fx-background-color: #1D3B2C;
 }
 
-.button {
-    -fx-cursor: hand;
+/* ─── PANEL FORMULARIO (IZQUIERDO) ──────────────────────────────────────── */
+.form-panel {
+    -fx-background-color: #244B38;
+}
+
+/* ScrollPane transparente y limpio */
+.form-scroll {
+    -fx-background: #244B38;
+    -fx-background-color: #244B38;
+    -fx-border-color: transparent #14291E transparent transparent;
+    -fx-border-width: 0 2 0 0;
+}
+
+.form-scroll .viewport {
+    -fx-background-color: #244B38;
+}
+
+/* ─── PANEL PREVISUALIZACION (DERECHO) ──────────────────────────────────── */
+.preview-panel {
+    -fx-background-color: #1B382A;
+}
+
+/* ─── DIVISOR VERTICAL ──────────────────────────────────────────────────── */
+.panel-divider {
+    -fx-background-color: #14291E;
+}
+
+/* ─── TITULOS DE SECCION ────────────────────────────────────────────────── */
+.section-title {
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-padding: 8px 16px;
-    -fx-background-radius: 6px;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 0 0 4 0;
 }
 
-.btn-primario {
-    -fx-background-color: #10b981;
-    -fx-text-fill: white;
-}
-.btn-primario:hover {
-    -fx-background-color: #059669;
-}
-
-.btn-secundario {
-    -fx-background-color: #0284c7;
-    -fx-text-fill: white;
-}
-.btn-secundario:hover {
-    -fx-background-color: #0369a1;
+/* ─── ETIQUETAS DE CAMPO (BLANCAS) ──────────────────────────────────────── */
+.field-label {
+    -fx-font-size: 12.5px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
 }
 
-.btn-limpiar {
-    -fx-background-color: #e2e8f0;
-    -fx-text-fill: #475569;
+/* ─── CAMPOS DE TEXTO (LETRAS BLANCAS) ──────────────────────────────────── */
+.form-field {
+    -fx-background-color: #173224;
+    -fx-border-color: #3B6B52;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #7BA88F;
+    -fx-padding: 9 13 9 13;
+    -fx-font-size: 13px;
+    -fx-pref-height: 40px;
 }
-.btn-limpiar:hover {
-    -fx-background-color: #cbd5e1;
+
+.form-field:hover {
+    -fx-border-color: #7C719F;
+    -fx-background-color: #1C3B2B;
+}
+
+.form-field:focused {
+    -fx-background-color: #183626;
+    -fx-border-color: #9B8FC2;
+    -fx-border-width: 2;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(155, 143, 194, 0.45), 10, 0, 0, 0);
+}
+
+/* ─── SEPARADOR ─────────────────────────────────────────────────────────── */
+.form-separator {
+    -fx-background-color: #38694F;
+    -fx-padding: 4 0 4 0;
+}
+
+/* ─── BOTON PRIMARIO: GENERAR (Morado Pastel con texto Blanco) ───────────── */
+.btn-primary {
+    -fx-background-color: #7C719F;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-padding: 10 18 10 18;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(124, 113, 159, 0.45), 12, 0, 0, 2);
+}
+
+.btn-primary:hover {
+    -fx-background-color: #8E82B5;
+    -fx-effect: dropshadow(gaussian, rgba(124, 113, 159, 0.65), 16, 0, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #635785;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* ─── BOTON SECUNDARIO: LIMPIAR (Morado Pastel Outline) ──────────────────── */
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C4BCE0;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-color: #7C719F;
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-padding: 10 16 10 16;
+    -fx-cursor: hand;
+    -fx-pref-width: 100px;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #7C719F;
+    -fx-text-fill: #FFFFFF;
+}
+
+.btn-secondary:pressed {
+    -fx-background-color: #635785;
+}
+
+/* ─── AREA DE PREVISUALIZACION (LETRAS BLANCAS) ─────────────────────────── */
+.preview-area {
+    -fx-background-color: #142B1F;
+    -fx-border-color: #36614A;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #6C947E;
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 13px;
+    -fx-padding: 14 16 14 16;
+    -fx-wrap-text: true;
+}
+
+.preview-area .content {
+    -fx-background-color: #142B1F;
+}
+
+.preview-area:focused {
+    -fx-border-color: #9B8FC2;
+    -fx-effect: dropshadow(gaussian, rgba(155, 143, 194, 0.35), 8, 0, 0, 0);
+}
+
+/* ─── BOTON COPIAR (Morado Pastel) ──────────────────────────────────────── */
+.btn-copy {
+    -fx-background-color: #7C719F;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-border-width: 0;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(124, 113, 159, 0.45), 10, 0, 0, 2);
+}
+
+.btn-copy:hover {
+    -fx-background-color: #8E82B5;
+    -fx-effect: dropshadow(gaussian, rgba(124, 113, 159, 0.65), 14, 0, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-copy:pressed {
+    -fx-background-color: #635785;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.btn-copy:disabled {
+    -fx-opacity: 0.35;
+    -fx-cursor: default;
+}
+
+/* ─── LABEL ESTADO DE COPIA ─────────────────────────────────────────────── */
+.copy-status-label {
+    -fx-text-fill: #C4BCE0;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(124, 113, 159, 0.40), 6, 0, 0, 0);
+}
+
+/* ─── FOOTER ────────────────────────────────────────────────────────────── */
+.footer-box {
+    -fx-background-color: #142B20;
+    -fx-padding: 12 32 12 32;
+    -fx-border-color: #2D5941 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.footer-label {
+    -fx-text-fill: #7DAA91;
+    -fx-font-size: 11.5px;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────────────────── */
+.scroll-bar {
+    -fx-background-color: #142B20;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #3B6B52;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #7C719F;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #142B20;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 2;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #7C719F;
 }

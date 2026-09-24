@@ -10,9 +10,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.13.0</version>
         <configuration>
-          <source>22</source>
-          <target>22</target>
-          <compilerArgs>--enable-preview</compilerArgs>
+          <release>${java.version}</release>
+          <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
       <plugin>
@@ -37,9 +36,11 @@
     </plugins>
   </build>
   <properties>
-    <maven.compiler.target>22</maven.compiler.target>
-    <maven.compiler.source>22</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <main.class>com.vidanova.Launcher</main.class>
+    <java.version>21</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <javafx.version>22.0.2</javafx.version>
+    <javafx.version>23.0.1</javafx.version>
   </properties>
 </project>
